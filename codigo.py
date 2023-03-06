@@ -21,22 +21,21 @@ st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_s
 
 
 # Adicionando sidebar
-select_player = st.sidebar.selectbox('Selecione um jogador', ['Samir'])
+select_player = st.sidebar.selectbox('Selecione um jogador', ['Bona','Collor','Pedrinho','Caio','Dani', 'Paiva','Thiba','Johny','Di Maria','Le Dib', 'Falzoni'])
 
 # Puxando o arquivo com a base de passes
 
-sheet_id = '15Zkt-YrhKGC3JKdPhGl5tjQhaeCfihJiGUev1DKP52o'
+sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 sheet_name = 'Geral'
 url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 data = pd.read_csv(url)
 
-
 # transformando a tabela em dataframe
 
 my_df = pd.DataFrame(data)
-my_df = my_df[my_df['Index_Evento'] != 'Sem valor']
+my_df = my_df[my_df['Nome_Jogador'] == select_player]
 
-# declarando as 3 colunas do aplicativo
+# declarando as 4 macro abas do aplicativo
 
 tab1, tab2, tab3, tab6= st.tabs(['Meu Perfil','Meus Mapas','Meus Videos', 'Meu Time'])
 
@@ -44,159 +43,7 @@ tab1, tab2, tab3, tab6= st.tabs(['Meu Perfil','Meus Mapas','Meus Videos', 'Meu T
 
 with tab1:
 	
-	tab9, tab10, tab11 = st.tabs(['Resumo', 'Stats Overview', 'Partidas'])
-	
-	with tab9:
-		# Criando figura
-		fig, ax = plt.subplots(figsize=(10,20))
-
-		# Definindo número de linhas e colunas
-
-		cols = 40
-		rows = 40
-
-		# Criar coordenadas com base no número de linhas e colunas
-
-		# Adicionando bordas
-
-		ax.set_ylim(0, rows)
-		ax.set_xlim(0, cols)
-
-		# Traçando linhas divisórias
-		ax.plot([1, 39], [36, 36], lw='.2', c='gray')
-		ax.plot([1, 39], [28, 28], lw='.2', c='gray')
-		ax.plot([1, 39], [14, 14], lw='.2', c='gray')
-
-
-		# colocando o time em que joga
-		ax.text(1,38, 'Samir Hauache', weight='bold', ha='left', va='center', fontsize = 28)
-		ax.text(1,37, 'Time: Canela de Pedreiro', ha='left', va='center', fontsize = 18, color='grey')
-		
-
-		# colocando dados gerais
-		ax.text(7.33, 34, 'Brasil', ha='center', va='center', fontsize = 16)
-		ax.text(20, 34, '30 anos', ha='center', va='center', fontsize = 16)
-		ax.text(32.66, 34, '177 cm', ha='center', va='center', fontsize = 16)
-		ax.text(7.33, 31, 'Destro', ha='center', va='center', fontsize = 16)
-		ax.text(20, 31, 'MEI', ha='center', va='center', fontsize = 16)
-		ax.text(32.66, 31, '5', ha='center', va='center', fontsize = 16)
-		ax.text(7.33, 33, 'Nacionalidade', ha='center', va='center', fontsize = 14, color='grey')
-		ax.text(20, 33, 'Idade', ha='center', va='center', fontsize = 14, color='grey')
-		ax.text(32.66, 33, 'Altura', ha='center', va='center', fontsize = 14, color = 'grey')
-		ax.text(7.33, 30, 'Pé de preferência', ha='center', va='center', fontsize = 14, color='grey')
-		ax.text(20, 30, 'Posição', ha='center', va='center', fontsize = 14,color='grey')
-		ax.text(32.66, 30, '# Camisa', ha='center', va='center', fontsize = 14,color='grey')
-
-		# plotando o pentagono de skills
-		coord = [[20, 26], [9, 22],[13.2,15.54],[26.8,15.54],[31,22]]
-		coord.append(coord[0])
-		xs, ys = zip(*coord)
-
-		ax.plot(xs,ys, color='grey', alpha=0.3)
-		ax.fill(xs,ys, color='grey', alpha=0.1)
-
-		ax.plot([20,20], [20.5,26], color='grey', alpha=0.3)
-		ax.plot([20,9], [20.5,22], color='grey',alpha=0.3)
-		ax.plot([20,13.2], [20.5,15.54], color='grey',alpha=0.3)
-		ax.plot([20,26.8], [20.5,15.54], color='grey',alpha=0.3)
-		ax.plot([20,31], [20.5,22], color='grey',alpha=0.3)
-		
-		att = 57
-		cre = 63
-		tec = 67
-		tac = 65
-		deff = 62
-		x_cent = 20
-		y_cent = 20.5
-		x_att_full = 20
-		y_att_full = 26
-		x_cre_full = 9
-		y_cre_full = 22
-		x_tec_full = 31
-		y_tec_full = 22
-		x_tac_full = 26.8
-		y_tac_full = 15.54
-		x_deff_full = 13.2
-		y_deff_full = 15.54
-		x_att = x_cent + (x_att_full - x_cent) * (att / 100)
-		y_att = y_cent + (y_att_full - y_cent) * (att / 100)
-		x_cre = x_cent + (x_cre_full - x_cent) * (cre / 100)
-		y_cre = y_cent + (y_cre_full - y_cent) * (cre / 100)
-		x_tec = x_cent + (x_tec_full - x_cent) * (tec / 100)
-		y_tec = y_cent + (y_tec_full - y_cent) * (tec / 100)
-		x_tac = x_cent + (x_tac_full - x_cent) * (tac / 100)
-		y_tac = y_cent + (y_tac_full - y_cent) * (tac / 100)
-		x_deff = x_cent + (x_deff_full - x_cent) * (deff / 100)
-		y_deff = y_cent + (y_deff_full - y_cent) * (deff / 100)
-
-		coord_int = [[x_att,y_att],[x_cre,y_cre],[x_deff, y_deff],[x_tac,y_tac],[x_tec,y_tec]]
-		coord_int.append(coord_int[0])
-		xsi,ysi = zip(*coord_int)
-
-		ax.plot(xsi,ysi, color='green', alpha=0.3)
-		ax.fill(xsi,ysi, color='green', alpha=0.3)
-
-		ax.text(1.25,27,s='Visão geral atributos', color='grey', fontsize = 12, ha='left')
-		ax.text(20,26.5,s='ATT '+str(att), color='white', fontsize = 12, ha='center', bbox = dict(facecolor='green', alpha=0.45))
-		ax.text(8.5,22,s='CRE '+str(cre), color='white', fontsize = 12, ha='right', bbox = dict(facecolor='green', alpha=0.45))
-		ax.text(31.5,22,s='TEC '+str(cre), color='white', fontsize = 12, ha='left', bbox = dict(facecolor='green', alpha=0.45))
-		ax.text(27.3,14.8,s='TAC '+str(cre), color='white', fontsize = 12, ha='left', bbox = dict(facecolor='green', alpha=0.45))
-		ax.text(12.7,14.8,s='DEF '+str(deff), color='white', fontsize = 12, ha='right', bbox = dict(facecolor='green', alpha=0.45))
-		
-		# Desenhando grafico classificação
-		ax.text(20, 13, s='Média mensal rating Matchday (últimos 12 meses)', color = 'grey', ha='center', fontsize=16)
-
-		coord = [[0, 12], [40, 12],[40,0],[0,0]]
-		coord.append(coord[0])
-		xs, ys = zip(*coord)
-
-		ax.plot(xs,ys, color='grey', alpha=0.0)
-		ax.fill(xs,ys, color='grey', alpha=0.1)
-
-		ax.bar(3.25,5.7,width=2.8,bottom=1,align='center', color = 'red', alpha = 0.9)
-		ax.bar(6.25,6.3,width=2.8,bottom=1,align='center', color = 'orange', alpha = 0.9)
-		ax.bar(9.25,6.8,width=2.8,bottom=1,align='center', color = 'orange', alpha = 0.9)
-		ax.bar(12.25,8.2,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.7)
-		ax.bar(15.25,7.4,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.4)
-		ax.bar(18.25,7.2,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.4)
-		ax.bar(21.25,6.5,width=2.8,bottom=1,align='center', color = 'orange', alpha = 0.9)
-		ax.bar(24.25,8.4,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.7)
-		ax.bar(27.25,7.7,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.4)
-		ax.bar(30.25,7.5,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.4)
-		ax.bar(33.25,5.9,width=2.8,bottom=1,align='center', color = 'red', alpha = 0.9)
-		ax.bar(36.25,7.7,width=2.8,bottom=1,align='center', color = 'green', alpha = 0.4)
-
-		ax.text(3.25,0.35,s='5.7', color='red', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(6.25,0.35,s='6.3', color='orange', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(9.25,0.35,s='6.8', color='orange', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(12.25,0.35,s='8.2', color='green', fontsize = 12, ha='center', alpha=0.7)
-		ax.text(15.25,0.35,s='7.4', color='green', fontsize = 12, ha='center', alpha=0.4)
-		ax.text(18.25,0.35,s='7.2', color='green', fontsize = 12, ha='center', alpha=0.4)
-		ax.text(21.25,0.35,s='6.5', color='orange', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(24.25,0.35,s='8.4', color='green', fontsize = 12, ha='center', alpha=0.7)
-		ax.text(27.25,0.35,s='7.7', color='green', fontsize = 12, ha='center', alpha=0.4)
-		ax.text(30.25,0.35,s='7.5', color='green', fontsize = 12, ha='center', alpha=0.4)
-		ax.text(33.25,0.35,s='5.9', color='red', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(36.25,0.35,s='7.7', color='green', fontsize = 12, ha='center', alpha=0.4)
-
-		ax.text(3.25,11,s='Jan', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(6.25,11,s='Fev', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(9.25,11,s='Mar', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(12.25,11,s='Abr', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(15.25,11,s='Mai', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(18.25,11,s='Jun', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(21.25,11,s='Jul', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(24.25,11,s='Ago', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(27.25,11,s='Set', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(30.25,11,s='Out', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(33.25,11,s='Nov', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		ax.text(36.25,11,s='Dez', color='grey', fontsize = 12, ha='center', alpha=0.9)
-		
-		ax.axis('off')
-		
-		fig
-		
-	# Codigo para a pagina de estatistica por jogo
+	tab10, tab11 = st.tabs(['Stats Overview', 'Partidas'])
 	
 	with tab11:
 
