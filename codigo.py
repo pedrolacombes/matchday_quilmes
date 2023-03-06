@@ -47,6 +47,8 @@ with tab1:
 	
 	with tab11:
 
+		
+		st.dataframe(my_df)
 	  # Alterando dataframe para pegar apenas linhas com informação
 		bd_geral = my_df[my_df['Nome_Jogador'] == 'Samir']
 		bd_geral.reset_index(inplace = True)
