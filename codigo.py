@@ -116,10 +116,10 @@ with tab1:
 		dicionario_index_passe_longo = {'Passe Longo': sum(bd_partida_selecionada.Index_Passe_Longo == stat_index_passe_longo)}
 
 	  # Definindo dicionário para % de passes certos
-		lista_percentual_passe_certo = dicionario_pass_outcome['Passe Certo'] / dicionario_nome_ato['Passe']
-		lista_percentual_passe_certo = '{:.1%}'.format(lista_percentual_passe_certo)
+		#lista_percentual_passe_certo = dicionario_pass_outcome['Passe Certo'] / dicionario_nome_ato['Passe']
+		#lista_percentual_passe_certo = '{:.1%}'.format(lista_percentual_passe_certo)
 
-		dicionario_percent_passes_certo = {'% Passes certos': lista_percentual_passe_certo}
+		#dicionario_percent_passes_certo = {'% Passes certos': lista_percentual_passe_certo}
 
 	  # Definindo dicionário para % de duelos aéreos ganhos
 		lista_percentual_duelos_aereos_vencidos = dicionario_duelo_outcome['Duelo Aéreo Ganho'] / dicionario_nome_duelo['Duelo Aéreo']
