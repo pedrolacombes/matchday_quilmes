@@ -145,7 +145,7 @@ with tab1:
 				       **dicionario_index_gol, **dicionario_index_passe_longo, **dicionario_index_toque,
 				       **dicionario_nome_ato, **dicionario_nome_duelo, **dicionario_pass_outcome,
 				       **dicionario_percent_duelos_no_chao_vencidos, **dicionario_percent_duelos_aereos_vencidos,
-				       **dicionario_percent_passes_certos,
+				       **dicionario_percent_passes_certo,
 				       **dicionario_gol_assist, **dicionario_clas_matchday}
 
 	  # Plotando as informações da partida em uma tabela
