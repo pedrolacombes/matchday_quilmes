@@ -116,22 +116,22 @@ with tab1:
 		dicionario_index_passe_longo = {'Passe Longo': sum(bd_partida_selecionada.Index_Passe_Longo == stat_index_passe_longo)}
 
 	  # Definindo dicionário para % de passes certos
-		#lista_percentual_passe_certo = dicionario_pass_outcome['Passe Certo'] / dicionario_nome_ato['Passe']
-		#lista_percentual_passe_certo = '{:.1%}'.format(lista_percentual_passe_certo)
+		lista_percentual_passe_certo = dicionario_pass_outcome['Passe Certo'] / dicionario_nome_ato['Passe']
+		lista_percentual_passe_certo = '{:.1%}'.format(lista_percentual_passe_certo)
 
-		#dicionario_percent_passes_certo = {'% Passes certos': lista_percentual_passe_certo}
+		dicionario_percent_passes_certo = {'% Passes certos': lista_percentual_passe_certo}
 
 	  # Definindo dicionário para % de duelos aéreos ganhos
-		#lista_percentual_duelos_aereos_vencidos = dicionario_duelo_outcome['Duelo Aéreo Ganho'] / dicionario_nome_duelo['Duelo Aéreo']
-		#lista_percentual_duelos_aereos_vencidos = '{:.1%}'.format(lista_percentual_duelos_aereos_vencidos)
+		lista_percentual_duelos_aereos_vencidos = dicionario_duelo_outcome['Duelo Aéreo Ganho'] / dicionario_nome_duelo['Duelo Aéreo']
+		lista_percentual_duelos_aereos_vencidos = '{:.1%}'.format(lista_percentual_duelos_aereos_vencidos)
 
-		#dicionario_percent_duelos_aereos_vencidos = {'% Duelos aéreos vencidos': lista_percentual_duelos_aereos_vencidos}
+		dicionario_percent_duelos_aereos_vencidos = {'% Duelos aéreos vencidos': lista_percentual_duelos_aereos_vencidos}
 
 	  # Definindo dicionário para % de duelos no chão ganhos
-		#lista_percentual_duelos_no_chao_vencidos = dicionario_duelo_outcome['Duelo no Chão Ganho'] / dicionario_nome_duelo['Duelo no Chão']
-		#lista_percentual_duelos_no_chao_vencidos = '{:.1%}'.format(lista_percentual_duelos_no_chao_vencidos)
+		lista_percentual_duelos_no_chao_vencidos = dicionario_duelo_outcome['Duelo no Chão Ganho'] / dicionario_nome_duelo['Duelo no Chão']
+		lista_percentual_duelos_no_chao_vencidos = '{:.1%}'.format(lista_percentual_duelos_no_chao_vencidos)
 
-		#dicionario_percent_duelos_no_chao_vencidos = {'% Duelos no chão vencidos': lista_percentual_duelos_no_chao_vencidos}
+		dicionario_percent_duelos_no_chao_vencidos = {'% Duelos no chão vencidos': lista_percentual_duelos_no_chao_vencidos}
 
 	  # Definindo dicionário gols + assistências
 		gols_assistencias = dicionario_index_gol['Gol'] + dicionario_index_assist['Assistência']
@@ -145,6 +145,8 @@ with tab1:
 		Dicionario_evolucao = {**dicionario_duelo_outcome, **dicionario_finalizacao_outcome, **dicionario_index_assist,
 				       **dicionario_index_gol, **dicionario_index_passe_longo, **dicionario_index_toque,
 				       **dicionario_nome_ato, **dicionario_nome_duelo, **dicionario_pass_outcome,
+				       **dicionario_percent_duelos_no_chao_vencidos, **dicionario_percent_duelos_aereos_vencidos,
+				       **dicionario_percent_passes_certos,
 				       **dicionario_gol_assist, **dicionario_clas_matchday}
 
 	  # Plotando as informações da partida em uma tabela
