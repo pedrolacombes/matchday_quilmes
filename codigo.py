@@ -54,8 +54,7 @@ with tab1:
 	  # Puxando a base de partidas
 		sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 		sheet_name = 'Partidas'
-		url = 'https://docs.google.com/spreadsheets/d/'+
-		+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
+		url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 		bd_partidas = pd.read_csv(url)
 
 	  # Definindo lista de partidas que podem ser selecionadas
