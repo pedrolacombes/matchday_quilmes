@@ -52,9 +52,10 @@ with tab1:
 		bd_geral.reset_index(inplace = True)
 
 	  # Puxando a base de partidas
-		sheet_id = '15Zkt-YrhKGC3JKdPhGl5tjQhaeCfihJiGUev1DKP52o'
+		sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 		sheet_name = 'Partidas'
-		url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
+		url = 'https://docs.google.com/spreadsheets/d/'+
+		+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 		bd_partidas = pd.read_csv(url)
 
 	  # Definindo lista de partidas que podem ser selecionadas
@@ -519,7 +520,7 @@ with tab2:
 
 with tab3:
   # Puxando o arquivo com a base de videos
-  sheet_id = '15Zkt-YrhKGC3JKdPhGl5tjQhaeCfihJiGUev1DKP52o'
+  sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
   sheet_name = 'Videos'
   url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
   data_videos = pd.read_csv(url)
@@ -624,7 +625,7 @@ with tab6:
 
 		# Puxando o arquivo com a base ranking
 
-		sheet_id = '15Zkt-YrhKGC3JKdPhGl5tjQhaeCfihJiGUev1DKP52o'
+		sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 		sheet_name = 'Ranking'
 		url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 		data = pd.read_csv(url)
@@ -723,7 +724,7 @@ with tab6:
 		
 		# Puxando o arquivo com a base comparação
 
-		sheet_id = '15Zkt-YrhKGC3JKdPhGl5tjQhaeCfihJiGUev1DKP52o'
+		sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 		sheet_name = 'Ranking'
 		url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 		data = pd.read_csv(url)
