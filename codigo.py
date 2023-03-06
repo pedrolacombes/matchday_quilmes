@@ -47,10 +47,8 @@ with tab1:
 	
 	with tab11:
 
-		
-		st.dataframe(my_df)
 	  # Alterando dataframe para pegar apenas linhas com informação
-		bd_geral = my_df[my_df['Nome_Jogador'] == 'Samir']
+		bd_geral = my_df
 		bd_geral.reset_index(inplace = True)
 
 	  # Puxando a base de partidas
@@ -63,7 +61,6 @@ with tab1:
 		lista_partidas_selecionaveis = bd_partidas.Nome_Completo_Partida.unique()
 		lista_partidas_selecionaveis = lista_partidas_selecionaveis.tolist()
 		lista_selecao_partidas = st.selectbox('Selecione uma partida', lista_partidas_selecionaveis)
-
 
 	  # Filtrando base geral para infos da partida selecionada
 		partida_selecionada = lista_selecao_partidas
@@ -286,7 +283,7 @@ with tab1:
 		
 		# Criando selectbox para escolher campeonato
 		
-		campeonato_escolhido = st.selectbox('Selecione um campeonato', ['FGV Society'])
+		campeonato_escolhido = st.selectbox('Selecione um campeonato', ['Society ECP 2023'])
 		
 		# Criando figura
 
