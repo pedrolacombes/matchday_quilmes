@@ -850,7 +850,6 @@ with tab6:
 
 	# Convertendo dicionário em dataframe
 	df_stat_por_partida = pd.json_normalize(dicionario_completo)
-	df_stat_por_partida
 
 	# Declarando lista de jogadores
 	lista_jogadores = data.Nome_Jogador.unique()
