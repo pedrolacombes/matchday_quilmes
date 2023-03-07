@@ -574,7 +574,7 @@ with tab1:
   filtros_stats_videos = ['Gols', 'Assistências', 'Passes', 'Finalizações', 'Duelos', 'Desarmes', 'Perdas de posse',
                           'Toques']
   filtros_partidas_videos = list(dicionario_partidas_visitantes.values())
-  option_partidas_videos = st.multiselect('Selecione uma partida', filtros_partidas_videos)
+  option_partidas_videos = st.selectbox('Selecione uma partida', filtros_partidas_videos)
   option_stat_video = st.selectbox('Selecione uma estatística', filtros_stats_videos)
   
   # Condicional para ver se filtros foram selecionados
@@ -1048,7 +1048,7 @@ with tab6:
 		data_jogador2 = df_stat_total[(df_stat_total['Jogador'] == Jogador2)]
 
 		# Definindo a lista de estatísticas de comparação
-		lista_stats_comp = ['Classificação média Matchday', 'Gols + Assistencias', 'Gols', 'Assistências', 'Finalização', 'Finalização no gol', 'Toques', 'Passe Certo', '% Passe certo', 'Perda de posse', 'Duelo no Chão Ganho', '% Duelos no chão ganhos', 'Duelo Aéreo Ganho', '% Duelos aéreos ganhos', 'Corte', 'Desarme']
+		lista_stats_comp = ['Gols + Assistencias', 'Gols', 'Assistências', 'Finalização', 'Finalização no gol', 'Toques', 'Passe Certo', '% Passe certo', 'Perda de posse', 'Duelo no Chão Ganho', '% Duelos no chão ganhos', 'Duelo Aéreo Ganho', '% Duelos aéreos ganhos', 'Corte', 'Desarme','Classificação média Matchday']
 
 		# Criando figura
 
