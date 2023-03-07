@@ -574,8 +574,8 @@ with tab1:
   filtros_stats_videos = ['Gols', 'Assistências', 'Passes', 'Finalizações', 'Duelos', 'Desarmes', 'Perdas de posse',
                           'Toques']
   filtros_partidas_videos = list(dicionario_partidas_visitantes.values())
-  option_stat_video = st.selectbox('Selecione uma estatística', filtros_stats_videos)
-  option_partidas_videos = st.selectbox('Selecione uma partida', filtros_partidas_videos)		
+  option_stat_video = st.multiselect('Selecione uma estatística', filtros_stats_videos)
+  option_partidas_videos = st.multiselect('Selecione uma partida', filtros_partidas_videos)		
   
   # Condicional para ver se filtros foram selecionados
   if option_partidas_videos == [] or option_stat_video ==[]:
@@ -607,8 +607,6 @@ with tab1:
   # puxando lista com index dos videos selecionados
     lista_id_videos_selecionados = df_videos_selecionados.Index_Video.unique()
     lista_id_videos_selecionados = lista_id_videos_selecionados.tolist()
-
-  
 
   # puxando videos selecionados e fazendo upload online
     for video in lista_id_videos_selecionados:
