@@ -21,7 +21,7 @@ st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_s
 
 
 # Adicionando sidebar
-select_player = st.sidebar.selectbox('Selecione um jogador', ['Bona','Collor','Pedrinho','Caio','Dani', 'Paiva','Thiba','Johny','Di Maria','Le Dib', 'Falzoni'])
+select_player = st.sidebar.selectbox('Selecione um jogador', ['Collor','Pedrinho','Caio','Dani', 'Paiva','Thiba','Johny','Di Maria','Le Dib', 'Falzoni','Bona'])
 
 # Puxando o arquivo com a base de passes
 
