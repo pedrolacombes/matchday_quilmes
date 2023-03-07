@@ -859,9 +859,7 @@ with tab6:
 	  dicionario_nome_ato = {'Jogador': jogador, 'nome_estatistica': 'Classificação média Matchday', 'Total': 'NA', 'Media por Jogo': 'NA'}
 	  dicionario_completo.append(dicionario_nome_ato)
 
-
 	df_stat_total = pd.json_normalize(dicionario_completo)
-	df_stat_total
 	
 	with tab7:
 		
