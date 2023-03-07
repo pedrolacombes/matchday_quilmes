@@ -390,7 +390,7 @@ with tab2:
     
   # Draw sentido do campo
     sentido = plt.arrow(18, 26, 8, 0, color="black", head_width = 0.4)
-    ax.add_patch(sentido)
+    #ax.add_patch(sentido)
 
   # Draw Circles
     ax.add_patch(centreSpot)
