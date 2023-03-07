@@ -602,7 +602,7 @@ with tab1:
         for stat_selecionada in option_stat_video:
             df_videos_selecionados_i = pd.DataFrame(my_df_video.loc[(my_df_video['Index_Partida'] == partida_selecionada) & (
                 my_df_video['Nome_Stat_Video'] == stat_selecionada)])
-        df_videos_selecionados = df_videos_selecionados.append(df_videos_selecionados_i)
+            df_videos_selecionados = df_videos_selecionados.append(df_videos_selecionados_i)
 
   # puxando lista com index dos videos selecionados
     lista_id_videos_selecionados = df_videos_selecionados.Index_Video.unique()
