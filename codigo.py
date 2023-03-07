@@ -949,7 +949,7 @@ with tab6:
 		
 		# Colocando os filtros na tela
 		
-		stats_ranking = ['Classificação média Matchday', 'Gols + Assistencias', 'Gols', 'Assistências', 'Finalização', 'Finalização no gol', 'Toques', 'Passe Certo', '% Passe certo', 'Perda de posse', 'Duelo no Chão Ganho', '% Duelos no chão ganhos', 'Duelo Aéreo Ganho', '% Duelos aéreos ganhos', 'Corte', 'Desarme']
+		stats_ranking = ['Gols + Assistencias', 'Gols', 'Assistências', 'Finalização', 'Finalização no gol', 'Toques', 'Passe Certo', '% Passe certo', 'Perda de posse', 'Duelo no Chão Ganho', '% Duelos no chão ganhos', 'Duelo Aéreo Ganho', '% Duelos aéreos ganhos', 'Corte', 'Desarme']
 		Estatistica = st.selectbox('Selecione uma estatística:',stats_ranking)
 		tipos_ordem = ['Total', 'Por jogo']
 		Ordem = st.selectbox('Ordenar por:', tipos_ordem)
