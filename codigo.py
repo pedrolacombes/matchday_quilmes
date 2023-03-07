@@ -38,13 +38,13 @@ my_df = my_df[my_df['Nome_Jogador'] == select_player]
 
 # declarando as 4 macro abas do aplicativo
 
-tab1, tab2, tab3, tab6= st.tabs(['Meu Perfil','Meus Mapas','Meus Videos', 'Meu Time'])
+tab1, tab2, tab3, tab6= st.tabs(['Videos','Mapas','Stats', 'Time'])
 
 # montando pagina do tabelao
 
-with tab1:
+with tab3:
 	
-	tab10, tab11 = st.tabs(['Stats Overview', 'Partidas'])
+	tab10, tab11 = st.tabs(['Resumo', 'Partidas'])
 	
 	with tab11:
 
@@ -537,7 +537,7 @@ with tab2:
     plt.xlim(0, 45)
     st.pyplot(fig)
 
-with tab3:
+with tab1:
   # Puxando o arquivo com a base de videos
   sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
   sheet_name = 'Videos'
@@ -574,9 +574,9 @@ with tab3:
   filtros_stats_videos = ['Gols', 'Assistências', 'Passes', 'Finalizações', 'Duelos', 'Desarmes', 'Perdas de posse',
                           'Toques']
   filtros_partidas_videos = list(dicionario_partidas_visitantes.values())
-  option_stat_video = st.multiselect('Selecione as estatísticas', filtros_stats_videos)
-  option_partidas_videos = st.multiselect('Selecione as partidas', filtros_partidas_videos)
-
+  option_partidas_videos = st.multiselect('Selecione uma partida', filtros_partidas_videos)
+  option_stat_video = st.selectbox('Selecione uma estatística', filtros_stats_videos)
+  
   # Condicional para ver se filtros foram selecionados
   if option_partidas_videos == [] or option_stat_video ==[]:
     st.write('Para visualizar os videos é necessário selecionar pelo menos uma estatística E uma partida')
