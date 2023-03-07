@@ -162,7 +162,7 @@ with tab3:
 	  # Plotando as informações da partida em uma tabela
 
 	  #Definindo lista de estatisticas em ordem
-		stats = ['Classificação média Matchday', 'Gols + Assistências', 'Gol', 'Assistência', 'Finalização', 'Finalização no gol', 'Finalização para fora', 'Finalização bloqueada', 'Toque', 'Passe Certo', '% Passes certos', 
+		stats = ['Gols + Assistências', 'Gol', 'Assistência', 'Finalização', 'Finalização no gol', 'Finalização para fora', 'Finalização bloqueada', 'Toque', 'Passe Certo', '% Passes certos', 
 			 'Perda de posse', 'Duelo no Chão Ganho', '% Duelos no chão vencidos', 'Duelo Aéreo Ganho','% Duelos aéreos vencidos', 'Desarme', 'Corte', 'Bloqueio de chute', 'Falta sofrida', 'Falta cometida', 
 			 'Cartão Amarelo', 'Cartão Vermelho']
 
@@ -300,7 +300,7 @@ with tab3:
 				       **dicionario_index_gol, **dicionario_index_passe_longo, **dicionario_index_toque,
 				       **dicionario_nome_ato, **dicionario_nome_duelo, **dicionario_pass_outcome,
 				       **dicionario_percent_duelos_aereos_vencidos, **dicionario_percent_duelos_no_chao_vencidos,
-				       **dicionario_percent_passes_certo, **dicionario_gol_assist, **dicionario_clas_matchday}
+				       **dicionario_percent_passes_certo, **dicionario_gol_assist}
 		
 		# Criando selectbox para escolher campeonato
 		
