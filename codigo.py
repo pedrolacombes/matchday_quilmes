@@ -19,28 +19,21 @@ import moviepy.editor as moviepy
 #Configurações gerais da página
 st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_sidebar_state="expanded", menu_items=None)
 
-# Puxando o arquivo com a base geral
-sheet_id = '1iJMBXj_sbSowhu5sZT3pCLRnSRbydgjbxg-PlEAoZvc'
+
+# Adicionando sidebar
+select_player = st.sidebar.selectbox('Selecione um jogador', ['Collor','Pedrinho','Caio','Dani', 'Paiva','Thiba','Johny','Di Maria','Le Dib', 'Falzoni','Bona'])
+
+# Puxando o arquivo com a base de passes
+
+sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 sheet_name = 'Geral'
 url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 data = pd.read_csv(url)
 data = data[data['Index_Partida'] > 0]
-data = pd.DataFrame(data)
 
-# Adicionando seleção de time no sidebar
-lista_times = data.Time_Jogador.unique()
-lista_times = lista_times.tolist()
-select_team = st.sidebar.selectbox('Selecione um time', lista_times)
+# transformando a tabela em dataframe
 
-# Gerando base my_df apenas com o time selecionado
-my_df = data[data['Time_Jogador'] == select_team]
-
-# Adicionando sidebar
-lista_jogadores = my_df.Nome_Jogador.unique()
-lista_jogadores = lista_jogadores.tolist()
-select_player = st.sidebar.selectbox('Selecione um jogador', lista_jogadores)
-
-# Gerando my_df apenas para jogador selecionado
+my_df = pd.DataFrame(data)
 my_df = my_df[my_df['Nome_Jogador'] == select_player]
 
 # declarando as 4 macro abas do aplicativo
@@ -60,7 +53,7 @@ with tab3:
 		bd_geral.reset_index(inplace = True)
 
 	  # Puxando a base de partidas
-		sheet_id = '1iJMBXj_sbSowhu5sZT3pCLRnSRbydgjbxg-PlEAoZvc'
+		sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
 		sheet_name = 'Partidas'
 		url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
 		bd_partidas = pd.read_csv(url)
@@ -546,7 +539,7 @@ with tab2:
 
 with tab1:
   # Puxando o arquivo com a base de videos
-  sheet_id = '1iJMBXj_sbSowhu5sZT3pCLRnSRbydgjbxg-PlEAoZvc'
+  sheet_id = '1zJ3OqlAYIrv1ddCgvNxm5-1F2NcZRUXloI4Qtgv_9YY'
   sheet_name = 'Videos'
   url = 'https://docs.google.com/spreadsheets/d/'+sheet_id+'/gviz/tq?tqx=out:csv&sheet='+sheet_name
   data_videos = pd.read_csv(url)
