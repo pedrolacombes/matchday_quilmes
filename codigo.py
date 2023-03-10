@@ -29,7 +29,7 @@ data = pd.DataFrame(data)
 
 # Adicionando seleção de time no sidebar
 lista_times = data.Time_Jogador.unique()
-lista_times = lista_partidas_selecionaveis.tolist()
+lista_times = lista_times.tolist()
 select_team = st.sidebar.selectbox('Selecione um time', lista_times)
 
 # Gerando base my_df apenas com o time selecionado
