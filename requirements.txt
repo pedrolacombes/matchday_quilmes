@@ -8,5 +8,4 @@ ffmpeg
 MoviePy
 pathlib
 bs4
-logging
-shutil
+
