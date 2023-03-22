@@ -6,3 +6,7 @@ seaborn
 opencv-python-headless
 ffmpeg
 MoviePy
+pathlib
+bs4
+logging
+shutil
